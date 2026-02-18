@@ -6462,7 +6462,7 @@
 		(locked yes)
 		(layer "B.Cu")
 		(uuid "c82ea6b6-a87f-49e4-8aff-4f9cb5c22b8e")
-		(at 158.496 128.016 180)
+		(at 158.496 128.016)
 		(descr "LED SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC-7351 nominal, (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator")
 		(tags "LED")
 		(property "Reference" "REF**"
@@ -6479,7 +6479,7 @@
 			)
 		)
 		(property "Value" "LED_P"
-			(at 0 -1.43 0)
+			(at 0.254 1.524 0)
 			(layer "B.Fab")
 			(uuid "0f7edb2b-661b-42d3-8184-02e1a8478683")
 			(effects
@@ -6518,14 +6518,14 @@
 		)
 		(attr smd)
 		(fp_line
-			(start 0.8 0.735)
-			(end -1.485 0.735)
+			(start -1.485 -0.735)
+			(end 0.8 -0.735)
 			(stroke
 				(width 0.12)
 				(type solid)
 			)
 			(layer "B.SilkS")
-			(uuid "42cc0bb7-660d-44a1-afce-50a53d640ab5")
+			(uuid "b82aeffe-e964-4716-8634-8a2503f2bcb2")
 		)
 		(fp_line
 			(start -1.485 0.735)
@@ -6538,44 +6538,14 @@
 			(uuid "08093565-c113-4e01-a6ca-3425a8cceb41")
 		)
 		(fp_line
-			(start -1.485 -0.735)
-			(end 0.8 -0.735)
+			(start 0.8 0.735)
+			(end -1.485 0.735)
 			(stroke
 				(width 0.12)
 				(type solid)
 			)
 			(layer "B.SilkS")
-			(uuid "b82aeffe-e964-4716-8634-8a2503f2bcb2")
-		)
-		(fp_line
-			(start 1.48 0.73)
-			(end 1.48 -0.73)
-			(stroke
-				(width 0.05)
-				(type solid)
-			)
-			(layer "B.CrtYd")
-			(uuid "3c9aba8f-bd4b-4478-a52f-7ec3181c05ca")
-		)
-		(fp_line
-			(start 1.48 -0.73)
-			(end -1.48 -0.73)
-			(stroke
-				(width 0.05)
-				(type solid)
-			)
-			(layer "B.CrtYd")
-			(uuid "f2fe5d05-1c0d-41c7-b055-cf293f7cc0cb")
-		)
-		(fp_line
-			(start -1.48 0.73)
-			(end 1.48 0.73)
-			(stroke
-				(width 0.05)
-				(type solid)
-			)
-			(layer "B.CrtYd")
-			(uuid "734431e5-2af9-4aa4-b84c-433cd45fa858")
+			(uuid "42cc0bb7-660d-44a1-afce-50a53d640ab5")
 		)
 		(fp_line
 			(start -1.48 -0.73)
@@ -6588,34 +6558,44 @@
 			(uuid "15757772-129f-47b4-9841-fcd58c055cf7")
 		)
 		(fp_line
-			(start 0.8 0.4)
-			(end -0.5 0.4)
+			(start -1.48 0.73)
+			(end 1.48 0.73)
 			(stroke
-				(width 0.1)
+				(width 0.05)
 				(type solid)
 			)
-			(layer "B.Fab")
-			(uuid "7176ae77-a59e-4799-b5c2-271b2781b5a3")
+			(layer "B.CrtYd")
+			(uuid "734431e5-2af9-4aa4-b84c-433cd45fa858")
 		)
 		(fp_line
-			(start 0.8 -0.4)
-			(end 0.8 0.4)
+			(start 1.48 -0.73)
+			(end -1.48 -0.73)
 			(stroke
-				(width 0.1)
+				(width 0.05)
 				(type solid)
 			)
-			(layer "B.Fab")
-			(uuid "243d5160-4f23-4cc1-887c-067acc6d5ec1")
+			(layer "B.CrtYd")
+			(uuid "f2fe5d05-1c0d-41c7-b055-cf293f7cc0cb")
 		)
 		(fp_line
-			(start -0.5 0.4)
-			(end -0.8 0.1)
+			(start 1.48 0.73)
+			(end 1.48 -0.73)
+			(stroke
+				(width 0.05)
+				(type solid)
+			)
+			(layer "B.CrtYd")
+			(uuid "3c9aba8f-bd4b-4478-a52f-7ec3181c05ca")
+		)
+		(fp_line
+			(start -0.8 -0.4)
+			(end 0.8 -0.4)
 			(stroke
 				(width 0.1)
 				(type solid)
 			)
 			(layer "B.Fab")
-			(uuid "8aa812bb-2655-4ce6-b00b-4afd6ccd7cb7")
+			(uuid "f558eda8-4335-4973-a404-19562f8e5a9d")
 		)
 		(fp_line
 			(start -0.8 0.1)
@@ -6628,14 +6608,34 @@
 			(uuid "d1d8a8d4-199a-4693-a921-24b8347770ae")
 		)
 		(fp_line
-			(start -0.8 -0.4)
-			(end 0.8 -0.4)
+			(start -0.5 0.4)
+			(end -0.8 0.1)
 			(stroke
 				(width 0.1)
 				(type solid)
 			)
 			(layer "B.Fab")
-			(uuid "f558eda8-4335-4973-a404-19562f8e5a9d")
+			(uuid "8aa812bb-2655-4ce6-b00b-4afd6ccd7cb7")
+		)
+		(fp_line
+			(start 0.8 -0.4)
+			(end 0.8 0.4)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "B.Fab")
+			(uuid "243d5160-4f23-4cc1-887c-067acc6d5ec1")
+		)
+		(fp_line
+			(start 0.8 0.4)
+			(end -0.5 0.4)
+			(stroke
+				(width 0.1)
+				(type solid)
+			)
+			(layer "B.Fab")
+			(uuid "7176ae77-a59e-4799-b5c2-271b2781b5a3")
 		)
 		(fp_text user "${REFERENCE}"
 			(at 0 0 0)
@@ -6650,19 +6650,19 @@
 			)
 		)
 		(pad "1" smd roundrect
-			(at -0.7875 0 180)
-			(size 0.875 0.95)
-			(layers "B.Cu" "B.Mask" "B.Paste")
-			(roundrect_rratio 0.25)
-			(net 181 "LED_LOOP")
-			(uuid "e3cd3ec3-d071-4544-8eb6-547a607ff181")
-		)
-		(pad "2" smd roundrect
-			(at 0.7875 0 180)
+			(at -0.7875 0)
 			(size 0.875 0.95)
 			(layers "B.Cu" "B.Mask" "B.Paste")
 			(roundrect_rratio 0.25)
 			(net 61 "GND")
+			(uuid "e3cd3ec3-d071-4544-8eb6-547a607ff181")
+		)
+		(pad "2" smd roundrect
+			(at 0.7875 0)
+			(size 0.875 0.95)
+			(layers "B.Cu" "B.Mask" "B.Paste")
+			(roundrect_rratio 0.25)
+			(net 181 "LED_LOOP")
 			(uuid "e21e18f2-cbc9-4a74-8f12-4b28a8dae3ce")
 		)
 		(embedded_fonts no)
@@ -6698,7 +6698,7 @@
 				(justify mirror)
 			)
 		)
-		(property "Value" "R_LED"
+		(property "Value" "330 ohm"
 			(at 0 -1.43 0)
 			(layer "B.Fab")
 			(uuid "8d84abaf-6d5d-453a-ab6c-bd434db89a1a")
@@ -6879,18 +6879,6 @@
 		)
 	)
 	(gr_line
-		(start 157.734 128.016)
-		(end 154.432 128.016)
-		(stroke
-			(width 0.2)
-			(type default)
-		)
-		(locked yes)
-		(layer "B.Cu")
-		(net 61)
-		(uuid "0fae6ca8-6c6c-4aa6-9a64-fea034455a92")
-	)
-	(gr_line
 		(start 150.114 106.172)
 		(end 152.146 106.172)
 		(stroke
@@ -6939,7 +6927,7 @@
 		(uuid "3e5bf7de-86ca-4097-b972-6df9ceedff1e")
 	)
 	(gr_line
-		(start 157.48 128.27)
+		(start 154.432 128.016)
 		(end 157.734 128.016)
 		(stroke
 			(width 0.2)
@@ -6948,7 +6936,7 @@
 		(locked yes)
 		(layer "B.Cu")
 		(net 61)
-		(uuid "5a2d19ab-c22c-4ddf-88b4-4cba39c0a5e5")
+		(uuid "4a5a68a8-de53-4654-81ce-b838e19664a6")
 	)
 	(gr_line
 		(start 159.258 123.698)
@@ -16570,7 +16558,7 @@
 		(locked yes)
 		(layer "B.Cu")
 		(net 181)
-		(uuid "c8316d2b-46de-4c2e-b8e9-13fff55d9ab9")
+		(uuid "9b7f419d-e779-4a2b-8302-9186c66b456c")
 	)
 	(zone
 		(net 61)
