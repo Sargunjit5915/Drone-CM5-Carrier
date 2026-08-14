@@ -1,0 +1,48 @@
+(version 1)
+
+# Custom DRC rules for Circular_RPi5 CM5 carrier board.
+#
+# NOTE: a netclass "track_width" is only the DEFAULT width the router starts
+# with -- it is NOT checked by DRC. The rules below are what actually enforce
+# minimum copper on the high-current rails, so a thin track cannot silently
+# come back.
+
+# --- 5 V / 5 A input and distribution -------------------------------------
+# /VBUS_IN carries the full board input current from J4 through F1; +5V is the
+# post-fuse rail feeding the CM5 (up to ~5 A).
+#
+# Minimum is 2.5 mm, not 2.8 or 3.0: on 1 oz outer copper (0.043 mm per this
+# board's stackup) IPC-2221 gives 5.40 A at a 10 C rise for 2.5 mm, so 2.5 mm
+# already clears the 5 A requirement with margin. This admits the fab-standard
+# 2.8 mm trunk without weakening the actual safety limit.
+(rule "5A power minimum track width"
+	(condition "A.NetClass == 'Power_5A' && A.Type == 'track'")
+	(constraint track_width (min 2.5mm) (opt 3.0mm)))
+
+# Vias on the 5 A rails: a 0.4 mm-drill via is worth roughly 1.5-2 A, so the
+# rail must change layer through several in parallel, never one.
+(rule "5A power minimum via size"
+	(condition "A.NetClass == 'Power_5A' && A.Type == 'via'")
+	(constraint via_diameter (min 0.7mm))
+	(constraint hole_size (min 0.35mm)))
+
+# --- High-speed differential pairs ----------------------------------------
+# Geometry targets ~90 ohm (USB3) and ~100 ohm (Ethernet/HDMI/MIPI) as
+# edge-coupled microstrip referenced to the In1/In4 GND planes across 0.23 mm
+# prepreg, er 4.4. First-order estimates -- confirm against the fabricator's
+# impedance model before release.
+#
+# Scoped to (layer outer) deliberately: these widths are ONLY valid on F.Cu and
+# B.Cu. In2.Cu sits between In1 (GND, 0.38 mm) and In3 (+5V, 0.15 mm), which is
+# an asymmetric stripline needing a different width for the same impedance, so
+# applying the microstrip number there would be wrong. Pairs routed on In2.Cu
+# still need their own impedance check -- this rule simply does not speak to it.
+(rule "USB3 SuperSpeed pair width"
+	(layer outer)
+	(condition "A.NetClass == 'HS_90_USB3' && A.Type == 'track'")
+	(constraint track_width (min 0.19mm) (opt 0.22mm) (max 0.26mm)))
+
+(rule "100 ohm pair width"
+	(layer outer)
+	(condition "A.NetClass == 'HS_100' && A.Type == 'track'")
+	(constraint track_width (min 0.17mm) (opt 0.20mm) (max 0.24mm)))

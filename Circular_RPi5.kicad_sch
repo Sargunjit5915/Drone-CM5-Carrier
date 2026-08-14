@@ -12993,7 +12993,7 @@
 	)
 	(wire
 		(pts
-			(xy 69.85 102.87) (xy 74.93 102.87)
+			(xy 69.85 102.87) (xy 72.39 102.87)
 		)
 		(stroke
 			(width 0)
@@ -13083,7 +13083,7 @@
 	)
 	(wire
 		(pts
-			(xy 87.63 57.15) (xy 87.63 69.85)
+			(xy 87.63 57.15) (xy 87.63 63.5)
 		)
 		(stroke
 			(width 0)
@@ -16045,6 +16045,194 @@
 			)
 		)
 	)
+	(wire
+		(pts
+			(xy 87.63 63.5) (xy 93.98 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "955ff018-6873-469d-8913-615d88d93fca")
+	)
+	(junction
+		(at 87.63 63.5)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "198968a6-f269-49a5-b47b-14750593ee62")
+	)
+	(symbol
+		(lib_id "Device:C")
+		(at 93.98 67.31 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "0c4d2b1d-a66f-425a-a96b-95a86dfaf584")
+		(property "Reference" "C9"
+			(at 97.79 66.0399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "22uF"
+			(at 97.79 68.5799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric"
+			(at 94.9452 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 93.98 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "USB VBUS bulk / TPS2069 output stability capacitor"
+			(at 93.98 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c65dbda6-5887-40b2-94df-757ccc801878")
+		)
+		(pin "2"
+			(uuid "288c5c39-7c0e-4b52-bf0b-e96cc6507bef")
+		)
+		(instances
+			(project ""
+				(path "/f9e30a80-9e2f-4005-8ba2-00bc0bf441f1"
+					(reference "C9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 93.98 71.12 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9d9447c2-dd8b-455d-9f4e-7b1fdb46a8dd")
+		(property "Reference" "#PWR0104"
+			(at 93.98 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 93.98 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 93.98 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 93.98 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 93.98 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "24cb6e88-9392-478c-b05c-cbc7dd9f9616")
+		)
+		(instances
+			(project ""
+				(path "/f9e30a80-9e2f-4005-8ba2-00bc0bf441f1"
+					(reference "#PWR0104")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(wire
+		(pts
+			(xy 87.63 63.5) (xy 87.63 69.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "72249af2-0db7-4e73-a81d-b5f8dc434e57")
+	)
+	(wire
+		(pts
+			(xy 72.39 102.87) (xy 74.93 102.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "33ba4176-cdd7-465b-b1da-e9f43adaa08a")
+	)
+	(wire
+		(pts
+			(xy 72.39 97.79) (xy 72.39 102.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d234ecc5-27be-4842-b208-f43aaef3e0a3")
+	)
+	(junction
+		(at 72.39 102.87)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8b8f03c4-bc2d-4514-a555-9d17806723f4")
+	)
 	(symbol
 		(lib_id "Connector:USB3_A")
 		(at 74.93 80.01 0)
@@ -16071,7 +16259,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_USB:USB_A_Molex_105057_Vertical"
+		(property "Footprint" "Connector_USB:USB3_A_Molex_48393-001"
 			(at 78.74 77.47 0)
 			(effects
 				(font
