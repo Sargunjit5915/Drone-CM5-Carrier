@@ -1,0 +1,6 @@
+# KiCad transient files
+*.lck
+~*.lck
+_autosave-*
+*-backups/
+fp-info-cache
