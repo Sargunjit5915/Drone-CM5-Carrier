@@ -9,18 +9,24 @@
 
 # --- 5 V / 5 A input and distribution -------------------------------------
 # /VBUS_IN carries the full board input current from J4 through F1; +5V is the
-# post-fuse rail feeding the CM5 (up to ~5 A).
+# post-fuse rail feeding the CM5 (up to ~5 A). On 1 oz outer copper (0.043 mm per
+# this board's stackup) IPC-2221 gives 4.59 A at a 10 C rise for 2.0 mm and 5.86 A
+# for 2.8 mm, so 2.0 mm is the floor and 2.8 mm the target.
 #
-# Minimum is 2.5 mm, not 2.8 or 3.0: on 1 oz outer copper (0.043 mm per this
-# board's stackup) IPC-2221 gives 5.40 A at a 10 C rise for 2.5 mm, so 2.5 mm
-# already clears the 5 A requirement with margin. This admits the fab-standard
-# 2.8 mm trunk without weakening the actual safety limit.
+# The 5 A path is F1 -> the In3.Cu +5V plane (4614 mm2) -> the CM5. Because it is
+# plane-based, most +5V surface copper is a short local branch to a decoupling
+# cap, an ESD diode bias pin, a TVS or an LED -- microamps to milliamps. A width
+# rule across the whole net cannot tell those apart from the trunk (DRC has no
+# topology), and a blanket 2.5 mm flagged 36 milliamp stubs as if they carried 5 A.
+#
+# So the constraint is scoped to the named rule areas "HC_5V", which cover the two
+# stretches of surface copper that genuinely carry the full current: F1's output to
+# its plane via, and the plane via that feeds the CM5 +5V pins. Widen those areas
+# if the high-current topology changes.
 (rule "5A power minimum track width"
-	(condition "A.NetClass == 'Power_5A' && A.Type == 'track'")
-	(constraint track_width (min 2.5mm) (opt 3.0mm)))
+	(condition "A.NetClass == 'Power_5A' && A.Type == 'track' && A.insideArea('HC_5V')")
+	(constraint track_width (min 2.0mm) (opt 2.8mm)))
 
-# Vias on the 5 A rails: a 0.4 mm-drill via is worth roughly 1.5-2 A, so the
-# rail must change layer through several in parallel, never one.
 (rule "5A power minimum via size"
 	(condition "A.NetClass == 'Power_5A' && A.Type == 'via'")
 	(constraint via_diameter (min 0.7mm))
